@@ -1,0 +1,100 @@
+import java.sql.Date;
+
+public class Log {
+
+	Date date = new Date(System.currentTimeMillis());
+
+	private long timestamp;
+
+	private int clientId;
+
+	private String description;
+
+	private float amount;
+
+	public Log(int clientId, String description, float amount) {
+		super();
+		Date date1 = new Date(System.currentTimeMillis());
+		setClientId(clientId);
+		setDescription(description);
+		setAmount(amount);
+	}
+
+	public long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public int getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+
+	public void getData() {
+		System.out.printf("timestamp is %d ,clientId is %d ,  description is %s  amount is %f ", timestamp, clientId,
+				description, amount);
+	}
+
+	@Override
+	public String toString() {
+		return "Log [Date is " + date + ", clientId=" + clientId + ", description=" + description + ", amount=" + amount
+				+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Float.floatToIntBits(amount);
+		result = prime * result + clientId;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Log other = (Log) obj;
+		if (Float.floatToIntBits(amount) != Float.floatToIntBits(other.amount))
+			return false;
+		if (clientId != other.clientId)
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (timestamp != other.timestamp)
+			return false;
+		return true;
+	}
+
+}
