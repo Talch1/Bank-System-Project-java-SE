@@ -1,0 +1,38 @@
+
+public class WithdrowExeption extends Exception {
+
+	private int clientId;
+	private float currentBallance;
+	private float withdrawAmount;
+
+	public WithdrowExeption(String mesege, int clientId, float currentBallance, float withdrawAmount) {
+		super(mesege);
+		setClientId(clientId);
+		setCurrentBallance(currentBallance);
+		setWithdrawAmount(withdrawAmount);
+	}
+
+	public int getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
+	}
+
+	public float getCurrentBallance() {
+		return currentBallance;
+	}
+
+	public void setCurrentBallance(float currentBallance) {
+		this.currentBallance = currentBallance;
+	}
+
+	public float getWithdrawAmount() {
+		return withdrawAmount;
+	}
+
+	public void setWithdrawAmount(float withdrawAmount) {
+		this.withdrawAmount = withdrawAmount;
+	}
+}
