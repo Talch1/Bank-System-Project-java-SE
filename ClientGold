@@ -1,0 +1,14 @@
+
+public class ClientGold extends Client {
+
+	public ClientGold(int id, String name, float balance, float commissionRate, float interestRate) {
+		super(id, name, balance, 0.02f, 0.03f);
+
+	}
+
+	@Override
+	public String toString() {
+		return "ClientGold [getId()=" + getId() + "]";
+	}
+
+}
