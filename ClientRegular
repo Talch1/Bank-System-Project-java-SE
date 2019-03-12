@@ -1,0 +1,14 @@
+
+public class ClientRegular extends Client {
+
+	public ClientRegular(int id, String name, float balance) {
+		super(id, name, balance, 0.03f, 0.01f);
+
+	}
+
+	@Override
+	public String toString() {
+		return "ClientRegular [getId()=" + getId() + "]";
+	}
+
+}
